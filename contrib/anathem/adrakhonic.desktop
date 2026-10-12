@@ -5,3 +5,4 @@ Comment=The square on the long side, proved four ways in chalk
 Exec=adrakhonic
 TryExec=adrakhonic
 X-Screensaver-Standalone=true
+X-Screensaver-Snapshot=adrakhonic --snapshot %o --size %wx%h --time 31

@@ -3,5 +3,5 @@
 #   podman run --rm --security-opt label=disable -v "$PWD":/src -w /src saver-build meson setup build
 FROM registry.fedoraproject.org/fedora:44
 RUN dnf install -y gcc meson ninja-build git rpm-build pkgconf-pkg-config wayland-devel wayland-protocols-devel \
-        libX11-devel libXrandr-devel desktop-file-utils libappstream-glib systemd-rpm-macros scdoc && dnf clean all
+        libX11-devel libXrandr-devel gcc-c++ qt6-qtbase-devel desktop-file-utils libappstream-glib systemd-rpm-macros scdoc && dnf clean all
 RUN git config --system --add safe.directory '*'

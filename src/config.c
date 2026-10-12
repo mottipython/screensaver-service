@@ -153,7 +153,7 @@ static bool read_entry(const char *path, const char *id, bool standalone_dir, Sa
 {
     FILE *f = fopen(path, "r");
     if (!f) return false;
-    char line[4096], *name = NULL, *comment = NULL, *exec = NULL, *tryexec = NULL;
+    char line[4096], *name = NULL, *comment = NULL, *exec = NULL, *tryexec = NULL, *snapshot = NULL, *settings = NULL;
     bool in_main = false, hidden = false, standalone = standalone_dir;
     while (fgets(line, sizeof line, f)) {
         char *s = trim(line);
@@ -168,6 +168,8 @@ static bool read_entry(const char *path, const char *id, bool standalone_dir, Sa
         else if (!strcmp(k, "TryExec") && !tryexec) tryexec = strdup(v);
         else if (!strcmp(k, "Hidden") || !strcmp(k, "NoDisplay")) hidden |= !strcmp(v, "true");
         else if (!strcmp(k, "X-Screensaver-Standalone")) standalone = !strcmp(v, "true");
+        else if (!strcmp(k, "X-Screensaver-Snapshot") && !snapshot) snapshot = strdup(v);
+        else if (!strcmp(k, "X-Screensaver-Settings") && !settings) settings = strdup(v);
     }
     fclose(f);
     bool ok = exec && !hidden;
@@ -177,9 +179,9 @@ static bool read_entry(const char *path, const char *id, bool standalone_dir, Sa
         free_argv(argv);
     }
     free(tryexec);
-    if (!ok) { free(name); free(comment); free(exec); return false; }
+    if (!ok) { free(name); free(comment); free(exec); free(snapshot); free(settings); return false; }
     out->id = strdup(id); out->name = name ? name : strdup(id); out->comment = comment ? comment : strdup("");
-    out->exec = exec; out->standalone = standalone;
+    out->exec = exec; out->standalone = standalone; out->snapshot = snapshot; out->settings = settings;
     return true;
 }
 
@@ -223,7 +225,7 @@ int savers_find(Saver *out, int max)
 
 void savers_free(Saver *s, int n)
 {
-    for (int i = 0; i < n; i++) { free(s[i].id); free(s[i].name); free(s[i].comment); free(s[i].exec); }
+    for (int i = 0; i < n; i++) { free(s[i].id); free(s[i].name); free(s[i].comment); free(s[i].exec); free(s[i].snapshot); free(s[i].settings); }
 }
 
 const Saver *saver_by_id(const Saver *s, int n, const char *id)

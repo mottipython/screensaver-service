@@ -5,6 +5,10 @@
 #include <stdbool.h>
 #include <sys/types.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #define NAME "screensaver-service"
 #define MAX_SAVERS 1024
 #define MAX_OUTPUTS 16
@@ -20,6 +24,8 @@ typedef struct {
     char *name;     /* Name= */
     char *comment;  /* Comment= */
     char *exec;     /* Exec= */
+    char *snapshot; /* X-Screensaver-Snapshot=: a command that writes a still picture, for the preview */
+    char *settings; /* X-Screensaver-Settings=: a command that opens its own options, if it has any */
     bool standalone;
 } Saver;
 
@@ -54,5 +60,9 @@ void saver_stop(Running *r);
 bool saver_alive(Running *r);                       /* false once every process of it has gone */
 int saver_x_fd(Running *r);                         /* to poll for input on its windows, or -1 */
 bool saver_x_input(Running *r);                     /* true if the user touched one of its windows */
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

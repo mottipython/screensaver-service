@@ -5,3 +5,4 @@ Comment=Calca 1: how to cut a square cake into eight
 Exec=cutting-the-cake
 TryExec=cutting-the-cake
 X-Screensaver-Standalone=true
+X-Screensaver-Snapshot=cutting-the-cake --snapshot %o --size %wx%h --time 40

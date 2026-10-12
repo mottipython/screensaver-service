@@ -5,3 +5,4 @@ Comment=The tiling problem from Anathem, solved over and over
 Exec=teglon
 TryExec=teglon
 X-Screensaver-Standalone=true
+X-Screensaver-Snapshot=teglon --snapshot %o --size %wx%h --time 60

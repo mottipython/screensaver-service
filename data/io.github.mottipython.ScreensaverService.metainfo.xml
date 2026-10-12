@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.mottipython.ScreensaverService</id>
+  <name>Screen Saver</name>
+  <summary>Screen savers for Wayland desktops</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <description>
+    <p>A small service that starts a screen saver when your session has been idle, and a classic settings window to choose one.</p>
+    <p>It runs the X11 screen savers already packaged for other desktops, through Xwayland, and any modern full-screen screen saver that registers with it. It asks the compositor when the session is idle, so video players hold it off, and it leaves locking to the desktop.</p>
+  </description>
+  <launchable type="desktop-id">screensaver-settings.desktop</launchable>
+  <url type="homepage">https://github.com/mottipython/screensaver-service</url>
+  <url type="bugtracker">https://github.com/mottipython/screensaver-service/issues</url>
+  <developer id="io.github.mottipython"><name>Motti Schleider</name></developer>
+  <content_rating type="oars-1.1"/>
+  <categories><category>Settings</category><category>DesktopSettings</category></categories>
+  <provides><binary>screensaverd</binary><binary>screensaverctl</binary><binary>screensaver-settings</binary></provides>
+  <releases><release version="0.1.0" date="2026-10-12"/></releases>
+</component>

@@ -5,3 +5,4 @@ Comment=What a fraa can do with the three things he owns
 Exec=bolt-chord-sphere
 TryExec=bolt-chord-sphere
 X-Screensaver-Standalone=true
+X-Screensaver-Snapshot=bolt-chord-sphere --snapshot %o --size %wx%h --time 23

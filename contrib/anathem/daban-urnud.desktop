@@ -5,3 +5,4 @@ Comment=The Geometers' ship changes course on atomic bombs
 Exec=daban-urnud
 TryExec=daban-urnud
 X-Screensaver-Standalone=true
+X-Screensaver-Snapshot=daban-urnud --snapshot %o --size %wx%h --time 39.5

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Screen Saver
+GenericName=Screen Saver Settings
+Comment=Choose a screen saver and when it starts
+Exec=screensaver-settings
+Icon=preferences-desktop-screensaver
+Categories=Qt;Settings;DesktopSettings;
+Keywords=screensaver;screen saver;idle;

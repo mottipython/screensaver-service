@@ -1,7 +1,7 @@
-project('screensaver-service', 'c', version: '0.1.0', license: 'MIT', meson_version: '>= 0.60',
-        default_options: ['c_std=gnu11', 'warning_level=2'])
+project('screensaver-service', 'c', 'cpp', version: '0.1.0', license: 'MIT', meson_version: '>= 0.60',
+        default_options: ['c_std=gnu11', 'cpp_std=c++17', 'warning_level=2'])
 
-add_project_arguments('-DVERSION="' + meson.project_version() + '"', language: 'c')
+add_project_arguments('-DVERSION="' + meson.project_version() + '"', language: ['c', 'cpp'])
 
 wayland_client = dependency('wayland-client')
 x11 = dependency('x11')
@@ -23,3 +23,21 @@ executable('screensaverctl', ['src/ctl.c'] + common, dependencies: [x11, xrandr]
 
 systemd_user = get_option('prefix') / 'lib' / 'systemd' / 'user'
 install_data('data/screensaverd.service', install_dir: systemd_user)
+
+# The settings window.
+qt = import('qt6')
+qt_dep = dependency('qt6', modules: ['Core', 'Gui', 'Widgets'])
+moc = qt.compile_moc(headers: 'src/settings/panel.h', dependencies: qt_dep)
+executable('screensaver-settings', ['src/settings/main.cpp', 'src/settings/panel.cpp', moc] + common,
+           dependencies: [qt_dep, x11, xrandr], install: true)
+install_data('data/screensaver-settings.desktop', install_dir: get_option('datadir') / 'applications')
+install_data('data/io.github.mottipython.ScreensaverService.metainfo.xml', install_dir: get_option('datadir') / 'metainfo')
+
+# Manual pages.
+scdoc = find_program('scdoc', required: get_option('man'))
+if scdoc.found()
+  foreach page : ['screensaverd', 'screensaverctl', 'screensaver-settings']
+    custom_target(page + '.1', input: 'man' / page + '.1.scd', output: page + '.1', feed: true, capture: true,
+                  command: [scdoc], install: true, install_dir: get_option('mandir') / 'man1')
+  endforeach
+endif

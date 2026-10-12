@@ -5,3 +5,4 @@ Comment=Fraa Lio fights the Battle of Trantae with weeds
 Exec=weed-war
 TryExec=weed-war
 X-Screensaver-Standalone=true
+X-Screensaver-Snapshot=weed-war --snapshot %o --size %wx%h --time 60

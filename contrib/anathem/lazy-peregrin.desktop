@@ -5,3 +5,4 @@ Comment=A fraa finds the shortest way round the maths
 Exec=lazy-peregrin
 TryExec=lazy-peregrin
 X-Screensaver-Standalone=true
+X-Screensaver-Snapshot=lazy-peregrin --snapshot %o --size %wx%h --time 25

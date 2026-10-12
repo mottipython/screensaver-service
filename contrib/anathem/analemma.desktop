@@ -5,3 +5,4 @@ Comment=The sun on the floor of the Temple of Orithena
 Exec=analemma
 TryExec=analemma
 X-Screensaver-Standalone=true
+X-Screensaver-Snapshot=analemma --snapshot %o --size %wx%h --time 22
