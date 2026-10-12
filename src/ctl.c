@@ -9,6 +9,9 @@
 #include <string.h>
 #include <unistd.h>
 
+static volatile sig_atomic_t interrupted;
+static void on_signal(int sig) { (void)sig; interrupted = 1; }
+
 static void usage(void)
 {
     fputs("usage: screensaverctl COMMAND\n"
@@ -94,7 +97,8 @@ int main(int argc, char **argv)
         if (!s) { fprintf(stderr, "screensaverctl: no screensaver called %s; see: screensaverctl list\n", argv[2]); return 1; }
         Running *r = saver_start(s, false);
         if (!r) return 1;
-        while (saver_alive(r) && !saver_x_input(r)) usleep(50 * 1000);
+        signal(SIGINT, on_signal); signal(SIGTERM, on_signal); signal(SIGHUP, on_signal); /* so that it is tidied away */
+        while (!interrupted && saver_alive(r) && !saver_x_input(r)) usleep(50 * 1000);
         saver_stop(r);
         return 0;
     }

@@ -1,4 +1,4 @@
-project('screensaver-service', 'c', 'cpp', version: '0.2.0', license: 'MIT', meson_version: '>= 0.60',
+project('screensaver-service', 'c', 'cpp', version: '0.2.1', license: 'MIT', meson_version: '>= 0.60',
         default_options: ['c_std=gnu11', 'cpp_std=c++17', 'warning_level=2'])
 
 add_project_arguments('-DVERSION="' + meson.project_version() + '"', language: ['c', 'cpp'])

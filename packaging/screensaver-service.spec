@@ -1,5 +1,5 @@
 Name:           screensaver-service
-Version:        0.2.0
+Version:        0.2.1
 Release:        1%{?dist}
 Summary:        Screen savers for Wayland desktops
 
@@ -90,5 +90,5 @@ appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/*.metainfo.xml
 %{_qt6_plugindir}/plasma/kcms/systemsettings_qwidgets/kcm_screensaverservice.so
 
 %changelog
-* Mon Oct 12 2026 Motti Schleider <motti.schleider@gmail.com> - 0.2.0-1
+* Mon Oct 12 2026 Motti Schleider <motti.schleider@gmail.com> - 0.2.1-1
 - Initial package
