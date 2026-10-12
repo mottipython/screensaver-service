@@ -75,9 +75,12 @@ time is in the settings window, and can be set to never.
 
 ## Install
 
-Fedora and Nobara packages are on the [releases page](../../releases):
+On Fedora and Nobara, from the [Copr repository](https://copr.fedorainfracloud.org/coprs/mottipython/screensaver-service/):
 
-    sudo dnf install ./screensaver-service-*.rpm ./screensaver-service-kcm-*.rpm
+    sudo dnf copr enable mottipython/screensaver-service
+    sudo dnf install screensaver-service screensaver-service-kcm
+
+The same packages are on the [releases page](../../releases) to download.
 
 Then open *Screen Saver* from the application menu, or System Settings, Display &
 Monitor, Screen Saver. Choosing a screen saver and pressing OK turns the service

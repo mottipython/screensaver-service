@@ -27,7 +27,7 @@ one-line install today, and reviewers something to try.
 
 People can then install it with:
 
-    sudo dnf copr enable YOURNAME/screensaver-service
+    sudo dnf copr enable mottipython/screensaver-service
     sudo dnf install screensaver-service screensaver-service-kcm
 
 ## 2. Fedora package review (you, then weeks of waiting)
@@ -61,7 +61,7 @@ mailing list.
     service runs X11 screen savers through Xwayland and standalone full-screen
     ones directly. It does not lock the screen; that is left to the desktop.
 
-    Fedora Account System Username: YOURNAME
+    Fedora Account System Username: mottipython
 
     This is my first package and I need a sponsor.
 
@@ -83,7 +83,7 @@ its issue tracker. A working Copr repository is the best argument. Suggested tex
     it never locks the screen.
 
     Repository: https://github.com/mottipython/screensaver-service
-    Copr: https://copr.fedorainfracloud.org/coprs/YOURNAME/screensaver-service/
+    Copr: https://copr.fedorainfracloud.org/coprs/mottipython/screensaver-service/
 
     Would you consider adding it to the Nobara repositories?
 
