@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=The Adrakhonic Theorem
+Comment=The square on the long side, proved four ways in chalk
+Exec=adrakhonic
+TryExec=adrakhonic
+X-Screensaver-Standalone=true

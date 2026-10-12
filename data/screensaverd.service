@@ -1,0 +1,15 @@
+[Unit]
+Description=Screensaver service
+Documentation=man:screensaverd(1)
+PartOf=graphical-session.target
+After=graphical-session.target
+ConditionEnvironment=WAYLAND_DISPLAY
+
+[Service]
+ExecStart=/usr/bin/screensaverd
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=on-failure
+Slice=session.slice
+
+[Install]
+WantedBy=graphical-session.target

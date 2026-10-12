@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Cutting the Cake
+Comment=Calca 1: how to cut a square cake into eight
+Exec=cutting-the-cake
+TryExec=cutting-the-cake
+X-Screensaver-Standalone=true

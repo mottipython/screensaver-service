@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Bolt, Chord and Sphere
+Comment=What a fraa can do with the three things he owns
+Exec=bolt-chord-sphere
+TryExec=bolt-chord-sphere
+X-Screensaver-Standalone=true

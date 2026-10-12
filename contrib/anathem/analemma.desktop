@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=The Analemma
+Comment=The sun on the floor of the Temple of Orithena
+Exec=analemma
+TryExec=analemma
+X-Screensaver-Standalone=true

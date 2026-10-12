@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Teglon
+Comment=The tiling problem from Anathem, solved over and over
+Exec=teglon
+TryExec=teglon
+X-Screensaver-Standalone=true

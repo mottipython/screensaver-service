@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=The Daban Urnud
+Comment=The Geometers' ship changes course on atomic bombs
+Exec=daban-urnud
+TryExec=daban-urnud
+X-Screensaver-Standalone=true

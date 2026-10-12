@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=The Lazy Peregrin
+Comment=A fraa finds the shortest way round the maths
+Exec=lazy-peregrin
+TryExec=lazy-peregrin
+X-Screensaver-Standalone=true

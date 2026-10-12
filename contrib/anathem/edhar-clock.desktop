@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=The Clock of Saunt Edhar
+Comment=The great clock of the Mynster, by the real time and date
+Exec=edhar-clock
+TryExec=edhar-clock
+X-Screensaver-Standalone=true
