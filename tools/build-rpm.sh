@@ -7,5 +7,5 @@ top=$PWD/build-rpm
 rm -rf "$top" && mkdir -p "$top/SOURCES" dist
 git archive --format=tar.gz --prefix="screensaver-service-$version/" -o "$top/SOURCES/screensaver-service-$version.tar.gz" HEAD
 rpmbuild -bb --define "_topdir $top" packaging/screensaver-service.spec
-cp "$top"/RPMS/*/screensaver-service-"$version"-*.rpm dist/
+cp "$top"/RPMS/*/screensaver-service-*"$version"-*.rpm dist/
 rm -rf "$top"

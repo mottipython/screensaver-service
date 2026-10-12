@@ -16,5 +16,5 @@
   <content_rating type="oars-1.1"/>
   <categories><category>Settings</category><category>DesktopSettings</category></categories>
   <provides><binary>screensaverd</binary><binary>screensaverctl</binary><binary>screensaver-settings</binary></provides>
-  <releases><release version="0.1.0" date="2026-10-12"/></releases>
+  <releases><release version="0.2.0" date="2026-10-12"/></releases>
 </component>

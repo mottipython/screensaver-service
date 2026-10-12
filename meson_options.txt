@@ -1,1 +1,2 @@
 option('man', type: 'feature', value: 'auto', description: 'Build the manual pages (needs scdoc)')
+option('kcm', type: 'feature', value: 'auto', description: 'Build the page for KDE System Settings (needs KF6 KCMUtils)')

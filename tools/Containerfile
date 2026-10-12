@@ -2,6 +2,6 @@
 #   podman build -t saver-build -f tools/Containerfile tools
 #   podman run --rm --security-opt label=disable -v "$PWD":/src -w /src saver-build meson setup build
 FROM registry.fedoraproject.org/fedora:44
-RUN dnf install -y gcc meson ninja-build git rpm-build pkgconf-pkg-config wayland-devel wayland-protocols-devel \
-        libX11-devel libXrandr-devel gcc-c++ qt6-qtbase-devel desktop-file-utils libappstream-glib systemd-rpm-macros scdoc && dnf clean all
+RUN dnf install -y gcc meson ninja-build git rpm-build qt6-rpm-macros pkgconf-pkg-config wayland-devel wayland-protocols-devel \
+        libX11-devel libXrandr-devel gcc-c++ qt6-qtbase-devel cmake extra-cmake-modules kf6-kcmutils-devel kf6-kcoreaddons-devel desktop-file-utils libappstream-glib systemd-rpm-macros scdoc && dnf clean all
 RUN git config --system --add safe.directory '*'

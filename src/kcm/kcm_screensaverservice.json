@@ -1,0 +1,10 @@
+{
+    "KPlugin": {
+        "Name": "Screen Saver",
+        "Description": "Choose a screen saver and when it starts",
+        "Icon": "preferences-desktop-screensaver"
+    },
+    "X-KDE-Keywords": "screensaver,screen saver,idle,xscreensaver",
+    "X-KDE-System-Settings-Parent-Category": "display",
+    "X-KDE-Weight": 80
+}

@@ -1,5 +1,5 @@
 Name:           screensaver-service
-Version:        0.1.0
+Version:        0.2.0
 Release:        1%{?dist}
 Summary:        Screen savers for Wayland desktops
 
@@ -14,12 +14,17 @@ BuildRequires:  scdoc
 BuildRequires:  desktop-file-utils
 BuildRequires:  libappstream-glib
 BuildRequires:  systemd-rpm-macros
+BuildRequires:  qt6-rpm-macros
 BuildRequires:  pkgconfig(wayland-client)
 BuildRequires:  pkgconfig(wayland-protocols) >= 1.27
 BuildRequires:  pkgconfig(wayland-scanner)
 BuildRequires:  pkgconfig(x11)
 BuildRequires:  pkgconfig(xrandr)
 BuildRequires:  cmake(Qt6Widgets)
+BuildRequires:  cmake
+BuildRequires:  extra-cmake-modules
+BuildRequires:  cmake(KF6KCMUtils)
+BuildRequires:  cmake(KF6CoreAddons)
 
 # X11 screen savers are shown through Xwayland; standalone ones do not need it
 Recommends:     xorg-x11-server-Xwayland
@@ -35,6 +40,15 @@ Idleness is reported by the compositor (ext-idle-notify-v1), so programs that
 inhibit idling, such as video players, hold the screen saver off. The service
 runs X11 screen savers through Xwayland and standalone full-screen ones
 directly. It does not lock the screen; that is left to the desktop.
+
+%package        kcm
+Summary:        Screen saver page for KDE System Settings
+Requires:       %{name}%{?_isa} = %{version}-%{release}
+Supplements:    (%{name} and systemsettings)
+
+%description    kcm
+A page in KDE System Settings, under Display and Monitor, for choosing a screen
+saver for screensaver-service.
 
 %prep
 %autosetup
@@ -72,6 +86,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/*.metainfo.xml
 %{_mandir}/man1/screensaverctl.1*
 %{_mandir}/man1/screensaver-settings.1*
 
+%files kcm
+%{_qt6_plugindir}/plasma/kcms/systemsettings_qwidgets/kcm_screensaverservice.so
+
 %changelog
-* Mon Oct 12 2026 Motti Schleider <motti.schleider@gmail.com> - 0.1.0-1
+* Mon Oct 12 2026 Motti Schleider <motti.schleider@gmail.com> - 0.2.0-1
 - Initial package

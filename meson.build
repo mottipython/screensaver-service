@@ -1,4 +1,4 @@
-project('screensaver-service', 'c', 'cpp', version: '0.1.0', license: 'MIT', meson_version: '>= 0.60',
+project('screensaver-service', 'c', 'cpp', version: '0.2.0', license: 'MIT', meson_version: '>= 0.60',
         default_options: ['c_std=gnu11', 'cpp_std=c++17', 'warning_level=2'])
 
 add_project_arguments('-DVERSION="' + meson.project_version() + '"', language: ['c', 'cpp'])
@@ -31,6 +31,16 @@ moc = qt.compile_moc(headers: 'src/settings/panel.h', dependencies: qt_dep)
 executable('screensaver-settings', ['src/settings/main.cpp', 'src/settings/panel.cpp', moc] + common,
            dependencies: [qt_dep, x11, xrandr], install: true)
 install_data('data/screensaver-settings.desktop', install_dir: get_option('datadir') / 'applications')
+
+# The same panel as a page in KDE's System Settings.
+kcmutils = dependency('KF6KCMUtils', method: 'cmake', modules: ['KF6::KCMUtils'], required: get_option('kcm'))
+if kcmutils.found()
+  kcm_moc = qt.compile_moc(sources: 'src/kcm/kcm.cpp', dependencies: [qt_dep, kcmutils], include_directories: include_directories('src/kcm'))
+  shared_module('kcm_screensaverservice', ['src/kcm/kcm.cpp', 'src/settings/panel.cpp', moc, kcm_moc] + common,
+                dependencies: [qt_dep, kcmutils, x11, xrandr], name_prefix: '', install: true,
+                install_dir: get_option('libdir') / 'qt6' / 'plugins' / 'plasma' / 'kcms' / 'systemsettings_qwidgets')
+endif
+
 install_data('data/io.github.mottipython.ScreensaverService.metainfo.xml', install_dir: get_option('datadir') / 'metainfo')
 
 # Manual pages.

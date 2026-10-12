@@ -41,6 +41,7 @@ public:
     ~Panel() override;
     bool apply();           // save, and tell the service; false if it could not be saved
     bool changed() const { return changed_; }
+    void reload() { load(); } // read the saved settings again, dropping any edits
 
 signals:
     void changedChanged(bool);
