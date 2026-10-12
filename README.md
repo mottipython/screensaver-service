@@ -53,12 +53,11 @@ themselves. One registers by installing a desktop entry in
     Exec=weed-war
     TryExec=weed-war
     X-Screensaver-Snapshot=weed-war --snapshot %o --size %wx%h --time 60
-    X-Screensaver-Settings=weed-war --configure
 
 `X-Screensaver-Snapshot` is optional: a command that writes a still picture, shown
 on the monitor in the settings window (`%o` is the file to write, `%w` and `%h`
-its size). `X-Screensaver-Settings` is optional too: a command that opens the
-screen saver's own options, for the *Settings* button.
+its size). `X-Screensaver-Settings=` *command* is optional too: a command that
+opens the screen saver's own options, for the *Settings* button.
 
 ## Locking
 
