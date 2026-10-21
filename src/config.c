@@ -69,7 +69,7 @@ void config_load(Config *c)
 {
     config_free(c);
     c->enabled = true; c->idle = 300; c->cycle = 0; c->blank = 1800; c->lock = false;
-    strcpy(c->mode, "random");
+    snprintf(c->mode, sizeof c->mode, "%s", "random");
     char *path = config_path();
     FILE *f = fopen(path, "r");
     free(path);
@@ -92,7 +92,7 @@ void config_load(Config *c)
     if (c->idle < 10) c->idle = 10;
     if (c->cycle < 0) c->cycle = 0;
     if (c->blank < 0) c->blank = 0;
-    if (strcmp(c->mode, "random") && strcmp(c->mode, "cycle") && strcmp(c->mode, "single")) strcpy(c->mode, "random");
+    if (strcmp(c->mode, "random") && strcmp(c->mode, "cycle") && strcmp(c->mode, "single")) snprintf(c->mode, sizeof c->mode, "%s", "random");
 }
 
 static int make_parents(char *path)
