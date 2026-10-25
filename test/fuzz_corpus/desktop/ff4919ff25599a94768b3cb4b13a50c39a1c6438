@@ -1,0 +1,7 @@
+[Desktop Entry]
+
+Exec=bh
+TryExec=sx
+Tr
+TryExec=sash
+TryExec=sh

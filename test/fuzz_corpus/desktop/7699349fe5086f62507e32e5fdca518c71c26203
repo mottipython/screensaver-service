@@ -1,0 +1,3 @@
+[Desktop Entry]
+NameSaver
+Exec=my-saver %o -wt %o

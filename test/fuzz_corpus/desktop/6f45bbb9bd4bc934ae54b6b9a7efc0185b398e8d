@@ -1,0 +1,3 @@
+[Desktop Entry]
+Exec=my-ser %o *w %w - %h
+X-Screensaver-Snapshot=t %o

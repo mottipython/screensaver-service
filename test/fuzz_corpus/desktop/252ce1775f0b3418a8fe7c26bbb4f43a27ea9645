@@ -1,0 +1,9 @@
+[Desktop Entry]
+Nat
+
+TryExec=sxec=
+TryExec=sxec=bash
+TryExec=s
+Exec=bash
+TryExec=sxec=bash
+TryExec=sh

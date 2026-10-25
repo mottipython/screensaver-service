@@ -1,0 +1,3 @@
+[Desktop Entry]
+Name=Snapshot Saver
+Exec=my-saver %o -wt %o

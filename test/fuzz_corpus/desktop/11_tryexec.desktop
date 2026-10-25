@@ -1,0 +1,4 @@
+[Desktop Entry]
+Name=TryExec Test
+Exec=bash
+TryExec=sh

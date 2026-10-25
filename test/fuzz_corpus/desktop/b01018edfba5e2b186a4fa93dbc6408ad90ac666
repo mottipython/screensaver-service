@@ -1,0 +1,4 @@
+[Desktop Entry]
+Name=Groucho Time
+Exec=groucho-time --winow
+X-Screensaver-Standalone=true

@@ -1,0 +1,3 @@
+[Desktop Entry]
+Exec=my-saver %o *w %w -h %h
+X-Screensaver-Snapshot=t %o

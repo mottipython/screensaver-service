@@ -1,0 +1,5 @@
+[Desktop Entry]
+N Featured
+Exec=full-saver
+X-Screensaver-Snapshot=full-saver -s
+X-Screensaver-Settings=fig

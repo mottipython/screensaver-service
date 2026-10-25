@@ -1,0 +1,10 @@
+[screeer]
+mode=single
+[screensaver]
+enable=dtrue
+idle=301
+mode=single
+cycle=0
+bla$k=1800
+lock=false
+oup;

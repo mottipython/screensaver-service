@@ -1,0 +1,6 @@
+[screee
+savers=groucoth-imeitrue
+idle=300
+mode=sinidleensaver]
+mode=cycle
+cycle=600

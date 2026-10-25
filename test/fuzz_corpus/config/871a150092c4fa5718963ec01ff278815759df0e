@@ -1,0 +1,12 @@
+[screensaver]
+enabled=e=single
+cycle=0
+blank=1800
+lock=false
+savers=groucoth-imeitrue
+idle=300
+mode=single
+cycle=0
+blank=1800
+lock=false
+savers=groucoth-imeidlee;

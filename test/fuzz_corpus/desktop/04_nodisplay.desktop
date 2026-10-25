@@ -1,0 +1,4 @@
+[Desktop Entry]
+Name=NoDisplay Saver
+Exec=secret-saver
+NoDisplay=true

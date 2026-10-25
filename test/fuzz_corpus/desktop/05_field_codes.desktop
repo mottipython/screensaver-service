@@ -1,0 +1,4 @@
+[Desktop Entry]
+Name=Snapshot Saver
+Exec=my-saver %o -w %w -h %h
+X-Screensaver-Snapshot=my-saver --snapshot %o

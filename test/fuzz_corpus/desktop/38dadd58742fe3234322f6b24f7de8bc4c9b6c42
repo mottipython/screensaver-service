@@ -1,0 +1,7 @@
+[Desktop Entry]
+NExec TesN
+Exec=bash
+TryExec=sx
+Tr
+TryExec=sash
+TryExec=sh

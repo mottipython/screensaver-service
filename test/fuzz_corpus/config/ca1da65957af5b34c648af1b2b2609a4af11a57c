@@ -1,0 +1,6 @@
+# faultrDation
+[screensaver]
+# Enabled flag
+enabled=1
+idle600
+mode=cycle

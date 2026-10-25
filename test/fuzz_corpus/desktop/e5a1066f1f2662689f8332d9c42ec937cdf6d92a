@@ -1,0 +1,3 @@
+[Desktop Entry]
+Name=hot Saver
+Exec=my-s -o *w %w -h %shot=t %o

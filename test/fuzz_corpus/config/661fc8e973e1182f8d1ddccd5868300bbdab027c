@@ -1,0 +1,10 @@
+[screensJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJaver]
+mode=single
+[screensaver]
+enabled=true
+idle=300
+mode=single
+cycle=0
+blank=1800
+lock=false
+savers=groucho-tsavers=duck-soup;

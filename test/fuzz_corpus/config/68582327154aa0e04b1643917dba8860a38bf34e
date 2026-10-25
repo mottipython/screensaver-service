@@ -1,0 +1,8 @@
+[screensaver]
+enabled=true
+idle=300
+mode=single
+cycle=0
+bla
+lock=false
+savers=gro-time;

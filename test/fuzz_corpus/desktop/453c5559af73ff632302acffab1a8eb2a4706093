@@ -1,0 +1,5 @@
+[Desktop Entry]
+t
+=Trest
+Exec=bash
+TryExec=sh

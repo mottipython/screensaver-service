@@ -1,0 +1,4 @@
+[Desktop Entry]
+Naee=TryExec Test
+Exec=bash
+TryExec=sh

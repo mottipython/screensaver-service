@@ -1,0 +1,3 @@
+[Desktop Entry]
+mcSave
+Exec=my-saver %o -wt %o

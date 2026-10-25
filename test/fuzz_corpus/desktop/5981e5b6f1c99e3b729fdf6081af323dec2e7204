@@ -1,0 +1,9 @@
+[Desktop EnryY
+Name=Gruocho Time
+Exec=grou[cho-time --window
+try]
+Name=r
+Exec==TryExec Test
+Exec=bash
+Try
+

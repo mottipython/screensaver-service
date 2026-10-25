@@ -112,6 +112,13 @@ KCMUtils builds the System Settings page; both are optional.
   still. *Preview* runs the real thing full screen.
 - X11 screen savers need Xwayland.
 
+## Security, Fuzzing & Robustness Testing
+
+The service daemon and control tools are hardened and continuously verified against memory corruption and unexpected inputs:
+- **Parser Hardening**: Configuration parsing (`config_load`), desktop entry scanning (`read_entry`), and command-line execution splitting (`split_exec`) use dynamic bounds-checked allocation and integer overflow guards.
+- **Fuzz Testing**: Includes 4 standalone LLVM `libFuzzer` harnesses in `test/fuzz/` (`fuzz_split_exec`, `fuzz_config_load`, `fuzz_desktop_entry`, `fuzz_ctl_cli`) compiled with AddressSanitizer (ASan) and UndefinedBehaviorSanitizer (UBSan).
+- **Regression Corpora**: Maintained under `test/fuzz_corpus/` to verify reproducible regression safety on every build. Run `make fuzz-check` to execute the fuzzer suites under sanitizers.
+
 ## Licence
 
 MIT.
