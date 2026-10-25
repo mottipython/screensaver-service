@@ -88,6 +88,7 @@ int main(int argc, char **argv)
     else if (!strcmp(cmd, "wait")) {
         if (argc != 3) {
             fprintf(stderr, "screensaverctl: wait requires MINUTES argument\n");
+            usage();
             ret = 2;
         } else {
             char *endptr = NULL;
@@ -105,6 +106,7 @@ int main(int argc, char **argv)
     else if (!strcmp(cmd, "change")) {
         if (argc != 3) {
             fprintf(stderr, "screensaverctl: change requires MINUTES argument\n");
+            usage();
             ret = 2;
         } else {
             char *endptr = NULL;
@@ -122,6 +124,7 @@ int main(int argc, char **argv)
     else if (!strcmp(cmd, "rest")) {
         if (argc != 3) {
             fprintf(stderr, "screensaverctl: rest requires MINUTES argument\n");
+            usage();
             ret = 2;
         } else {
             char *endptr = NULL;
@@ -139,6 +142,7 @@ int main(int argc, char **argv)
     else if (!strcmp(cmd, "lock")) {
         if (argc != 3) {
             fprintf(stderr, "screensaverctl: lock requires 'on' or 'off'\n");
+            usage();
             ret = 2;
         } else if (!strcmp(argv[2], "on")) {
             c.lock = true;
@@ -148,15 +152,18 @@ int main(int argc, char **argv)
             ret = save(&c);
         } else {
             fprintf(stderr, "screensaverctl: lock requires 'on' or 'off', got: %s\n", argv[2]);
+            usage();
             ret = 2;
         }
     }
     else if (!strcmp(cmd, "mode")) {
         if (argc != 3) {
             fprintf(stderr, "screensaverctl: mode requires 'random', 'cycle' or 'single'\n");
+            usage();
             ret = 2;
         } else if (strcmp(argv[2], "random") && strcmp(argv[2], "cycle") && strcmp(argv[2], "single")) {
             fprintf(stderr, "screensaverctl: unknown mode '%s'; must be random, cycle or single\n", argv[2]);
+            usage();
             ret = 2;
         } else {
             snprintf(c.mode, sizeof c.mode, "%s", argv[2]);
@@ -170,6 +177,7 @@ int main(int argc, char **argv)
     else if (!strcmp(cmd, "use")) {
         if (argc < 3) {
             fprintf(stderr, "screensaverctl: use requires at least one NAME\n");
+            usage();
             ret = 2;
         } else {
             config_free(&c);
@@ -198,6 +206,7 @@ int main(int argc, char **argv)
     else if (!strcmp(cmd, "test")) {
         if (argc != 3) {
             fprintf(stderr, "screensaverctl: test requires NAME argument\n");
+            usage();
             ret = 2;
         } else {
             const Saver *s = saver_by_id(savers, n, argv[2]);
